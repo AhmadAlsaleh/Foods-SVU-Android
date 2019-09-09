@@ -12,7 +12,66 @@ class LauncherActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launcher)
-        getAllCategories()
+
+        getLocations()
+
+    }
+
+    private fun getLocations() {
+        val queue = Volley.newRequestQueue(this)
+        val locationsArrayRequest = JsonArrayRequest(APIs.LOCATIONS, {
+
+            Statics.locations.clear()
+            for (i in 0 until it.length()) {
+                val mainLocationJSON = it.getJSONObject(i)
+                Statics.locations.add(
+                        LocationModel(
+                                mainLocationJSON.getString("_id"),
+                                mainLocationJSON.getString("nameAR"),
+                                mainLocationJSON.getJSONArray("subLocations")
+                        )
+                )
+            }
+            queue.cancelAll("loc")
+            getMainItems()
+        }, {
+            queue.cancelAll("loc")
+            Log.e("locations", it.toString())
+            getLocations()
+        })
+        locationsArrayRequest.tag = "loc"
+        queue.add(locationsArrayRequest)
+    }
+
+    private fun getMainItems() {
+        val queue = Volley.newRequestQueue(this)
+        val mainRequest = JsonArrayRequest(APIs.MAIN, {
+
+            Log.d("main items", it.toString())
+
+            Statics.mainItems.clear()
+            for (i in 0 until it.length()) {
+                val item = it.getJSONObject(i)
+                Statics.mainItems.add(
+                        ItemsModel(
+                                item.getString("_id"),
+                                item.getString("nameEN"),
+                                item.getString("image"),
+                                item.getString("locationID"),
+                                item.getString("descriptionAR")
+                        )
+                )
+            }
+            queue.cancelAll("main")
+            getAllCategories()
+
+        }, {
+            Log.e("err", it.toString())
+            queue.cancelAll("main")
+            getMainItems()
+        })
+        mainRequest.tag = "main"
+        queue.add(mainRequest)
     }
 
     private fun getAllCategories() {

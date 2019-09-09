@@ -5,5 +5,6 @@ import java.util.ArrayList
 object Statics {
 
     var categoryModels = ArrayList<CategoryModel>()
-//    var itemModels = ArrayList<ItemsModel>()
+    var mainItems = ArrayList<ItemsModel>()
+    var locations = ArrayList<LocationModel>()
 }

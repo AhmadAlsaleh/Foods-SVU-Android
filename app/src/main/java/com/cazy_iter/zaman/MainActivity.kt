@@ -10,10 +10,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // region categories and items
         val mainPager = MainPagerAdapter(supportFragmentManager)
-        mainPager.addFragment(BlankFragment(), "")
-        mainPager.addFragment(BlankFragment(), "")
-        mainPager.addFragment(BlankFragment(), "")
+        for (item in Statics.mainItems) {
+            mainPager.addFragment(MainFragment(item))
+        }
         pager.adapter = mainPager
         worm_dots_indicator.setViewPager(pager)
 
@@ -21,9 +22,14 @@ class MainActivity : AppCompatActivity() {
             mainLL.addView(
                     MainGroupItemsView(
                             this,
-                            category)
-                            .view
+                            category
+                    ).view
             )
+        }
+        // endregion
+
+        searchFAB.setOnClickListener {
+            DialogSearch(this).show()
         }
 
     }

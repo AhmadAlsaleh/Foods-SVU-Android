@@ -7,54 +7,115 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="175dp">
-
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/pager"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                </android.support.v4.view.ViewPager>
-
-                <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-                    android:id="@+id/worm_dots_indicator"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:dotsColor="@color/colorAccent"
-                    app:dotsStrokeColor="@color/colorAccent"
-                    app:dotsCornerRadius="8dp"
-                    app:dotsSize="16dp"
-                    app:dotsSpacing="4dp"
-                    app:dotsStrokeWidth="2dp"
-                    android:layout_centerInParent="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="5dp"/>
-
-            </RelativeLayout>
+            android:theme="@style/AppTheme.AppBarOverlay">
 
             <LinearLayout
-                android:id="@+id/mainLL"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_margin="5dp">
+                android:layout_height="@dimen/dimToolbar"
+                android:layout_marginTop="@dimen/dim5"
+                android:layout_marginBottom="@dimen/dim5"
+                android:layout_marginEnd="@dimen/dim10"
+                android:layout_marginStart="@dimen/dim10"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/dim10"
+                android:paddingEnd="@dimen/dim10"
+                android:orientation="horizontal"
+                android:background="@drawable/circle_white">
 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/app_name"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/dim20"
+                    android:gravity="center_vertical"
+                    tools:ignore="SpUsage" />
+
+                <ImageView
+                    android:id="@+id/settingsIV"
+                    android:layout_width="@dimen/dimToolbar"
+                    android:layout_height="@dimen/dimToolbar"
+                    app:srcCompat="@drawable/ic_settings"
+                    android:clickable="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="@dimen/dim7"
+                    android:focusable="true"/>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </android.support.design.widget.AppBarLayout>
 
-    </ScrollView>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="175dp">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </android.support.v4.view.ViewPager>
+
+                    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+                        android:id="@+id/worm_dots_indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:dotsColor="@color/colorAccent"
+                        app:dotsStrokeColor="@color/colorAccent"
+                        app:dotsCornerRadius="8dp"
+                        app:dotsSize="16dp"
+                        app:dotsSpacing="4dp"
+                        app:dotsStrokeWidth="2dp"
+                        android:layout_centerInParent="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="5dp"/>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/mainLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="5dp">
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/searchFAB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fabSize="normal"
+        android:src="@drawable/ic_search"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:focusable="true" />
 
 </RelativeLayout>
