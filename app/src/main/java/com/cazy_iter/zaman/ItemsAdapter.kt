@@ -21,9 +21,11 @@ class ItemsAdapter(private val context: Context,
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text = items[position].name
-//        Picasso.get()
-//                .load(items[position].image)
-//                .into(holder.image)
+        try {
+            Picasso.get()
+                    .load(items[position].image)
+                    .into(holder.image)
+        } catch (err: Exception) {}
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

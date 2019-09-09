@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultsActivity"
+    tools:context=".SettingsActivity"
     android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
@@ -40,7 +40,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/search_results"
+                android:text="@string/settings"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="@dimen/dim20"
                 android:gravity="center_vertical"
@@ -50,10 +50,34 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/resultRV"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent" />
+    <TextView
+        android:id="@+id/englishTV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimToolbar"
+        android:text="English"
+        android:paddingHorizontal="@dimen/dim10"
+        android:gravity="center_vertical"
+        android:textSize="18dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginHorizontal="@dimen/dim10"/>
+
+    <TextView
+        android:id="@+id/arabicTV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimToolbar"
+        android:text="اللغة العربية"
+        android:paddingHorizontal="@dimen/dim10"
+        android:gravity="center_vertical"
+        android:textSize="18dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginHorizontal="@dimen/dim10"/>
 
 </LinearLayout>

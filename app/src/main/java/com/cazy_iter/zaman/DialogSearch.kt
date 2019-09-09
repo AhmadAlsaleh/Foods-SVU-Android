@@ -46,7 +46,7 @@ class DialogSearch(context: Context?) : Dialog(context) {
                         .putExtra("res", it.getJSONArray("res").toString()))
 
             }, {
-                Toast.makeText(context, "Try again, please", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, context.getString(R.string.try_again), Toast.LENGTH_SHORT).show()
                 loading.hide()
                 queue.cancelAll("find")
             })
@@ -58,7 +58,7 @@ class DialogSearch(context: Context?) : Dialog(context) {
 
     private fun setupLocations() {
         val spinnerMainItems = ArrayList<String>()
-        spinnerMainItems.add("All Regions")
+        spinnerMainItems.add(context.getString(R.string.all_regions))
         for (main in Statics.locations) {
             spinnerMainItems.add(main.name)
         }
@@ -109,7 +109,7 @@ class DialogSearch(context: Context?) : Dialog(context) {
 
     private fun setupSpinner() {
         val spinnerItems = ArrayList<String>()
-        spinnerItems.add("All Categories")
+        spinnerItems.add(context.getString(R.string.all_categories))
         for (category in Statics.categoryModels) {
             spinnerItems.add(category.name)
         }

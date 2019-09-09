@@ -16,7 +16,7 @@
         android:id="@+id/mainTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="name"
+        android:text="@string/name"
         android:textSize="22dp"
         android:background="@color/hideAccent"
         android:padding="3dp"

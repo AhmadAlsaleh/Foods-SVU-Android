@@ -36,10 +36,10 @@ class MainGroupItemsView(private val context: Context, private val category: Cat
             for (i in 0 until mealsJson.length()) {
                 val item = mealsJson.getJSONObject(i)
                 meals.add(ItemsModel(item.getString("_id"),
-                        item.getString("nameEN"),
+                        item.getString("name" + Statics.getCurrentLanguageName(context)),
                         item.getString("image"),
                         item.getString("locationID"),
-                        item.getString("descriptionAR")))
+                        item.getString("description" + Statics.getCurrentLanguageName(context))))
             }
 
             categoryRV.adapter = ItemsAdapter(context, meals)

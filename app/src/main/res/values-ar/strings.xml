@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">زمان</string>
+    <string name="find_meal">اعثر على وصفة</string>
+    <string name="try_again">حاول مرة ثانية</string>
+    <string name="all_regions">كل المناطق</string>
+    <string name="all_categories">كل الفئات</string>
+    <string name="search_results">نتائج البحث</string>
+    <string name="loading">الرجاء الانتظار…</string>
+    <string name="search">بحث</string>
+    <string name="name">الاسم</string>
+    <string name="category">الفئة</string>
+    <string name="settings">Settings</string>
+</resources>

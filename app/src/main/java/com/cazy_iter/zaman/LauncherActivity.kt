@@ -1,17 +1,21 @@
 package com.cazy_iter.zaman
 
 import android.content.Intent
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.annotation.RequiresApi
 import android.util.Log
 import com.android.volley.toolbox.JsonArrayRequest
 import com.android.volley.toolbox.Volley
 
 class LauncherActivity : AppCompatActivity() {
 
+    @RequiresApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launcher)
+        Statics.setRTL_LTR(this)
 
         getLocations()
 
@@ -25,9 +29,9 @@ class LauncherActivity : AppCompatActivity() {
             for (i in 0 until it.length()) {
                 val mainLocationJSON = it.getJSONObject(i)
                 Statics.locations.add(
-                        LocationModel(
+                        LocationModel(this,
                                 mainLocationJSON.getString("_id"),
-                                mainLocationJSON.getString("nameAR"),
+                                mainLocationJSON.getString("name" + Statics.getCurrentLanguageName(this)),
                                 mainLocationJSON.getJSONArray("subLocations")
                         )
                 )
@@ -55,10 +59,10 @@ class LauncherActivity : AppCompatActivity() {
                 Statics.mainItems.add(
                         ItemsModel(
                                 item.getString("_id"),
-                                item.getString("nameEN"),
+                                item.getString("name" + Statics.getCurrentLanguageName(this)),
                                 item.getString("image"),
                                 item.getString("locationID"),
-                                item.getString("descriptionAR")
+                                item.getString("description" + Statics.getCurrentLanguageName(this))
                         )
                 )
             }
@@ -83,7 +87,7 @@ class LauncherActivity : AppCompatActivity() {
                 Statics.categoryModels.add(
                         CategoryModel(
                                 category.getString("_id"),
-                                category.getString("nameAR"),
+                                category.getString("name" + Statics.getCurrentLanguageName(this)),
                                 category.getString("image")
                         )
                 )
