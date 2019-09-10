@@ -36,6 +36,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"
+            android:layout_marginHorizontal="@dimen/dim5"/>
+
     </LinearLayout>
 
 </RelativeLayout>
