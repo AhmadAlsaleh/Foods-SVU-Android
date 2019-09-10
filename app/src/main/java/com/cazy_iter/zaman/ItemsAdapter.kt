@@ -1,6 +1,7 @@
 package com.cazy_iter.zaman
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -26,6 +27,13 @@ class ItemsAdapter(private val context: Context,
                     .load(items[position].image)
                     .into(holder.image)
         } catch (err: Exception) {}
+
+        holder.image.setOnClickListener {
+            context.startActivity(
+                    Intent(context, ItemPreviewActivity::class.java).putExtra("item", items[position])
+            )
+        }
+
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
