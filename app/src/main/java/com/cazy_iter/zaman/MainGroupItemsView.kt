@@ -39,6 +39,7 @@ class MainGroupItemsView(private val context: Context, private val category: Cat
                         item.getString("name" + Statics.getCurrentLanguageName(context)),
                         item.getString("image"),
                         item.getString("locationID"),
+                        item.getString("content"),
                         item.getString("description" + Statics.getCurrentLanguageName(context))))
             }
 

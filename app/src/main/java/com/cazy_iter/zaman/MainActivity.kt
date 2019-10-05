@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             DialogSearch(this).show()
         }
 
+        settingsIV.visibility = View.GONE
         settingsIV.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
             finish()

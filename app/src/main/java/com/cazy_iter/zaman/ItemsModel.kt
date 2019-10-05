@@ -6,4 +6,5 @@ class ItemsModel(val id: String,
                  val name: String,
                  val image: String,
                  val locationID: String,
+                 val content: String,
                  val description: String): Serializable

@@ -30,6 +30,7 @@ class ResultsActivity : AppCompatActivity() {
                             itemJSON.getString("name" + Statics.getCurrentLanguageName(this)),
                             itemJSON.getString("image"),
                             itemJSON.getString("locationID"),
+                            itemJSON.getString("content"),
                             itemJSON.getString("description" + Statics.getCurrentLanguageName(this))
                     )
             )

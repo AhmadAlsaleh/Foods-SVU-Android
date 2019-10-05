@@ -1,5 +1,6 @@
 package com.cazy_iter.zaman
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -12,6 +13,7 @@ import kotlinx.android.synthetic.main.content_item_preview.*
 
 class ItemPreviewActivity : AppCompatActivity() {
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_preview)
@@ -33,7 +35,8 @@ class ItemPreviewActivity : AppCompatActivity() {
                     .load(item.image)
                     .into(itemImageIV)
         } catch (err: Exception) {}
-        itemDescriptionTV.text = item.description
+        itemContentTV.text = "المكونات:\n" + item.content
+        itemDescriptionTV.text = "طريقة التحضير:\n" + item.description
         getLocation(item.locationID)
 
     }

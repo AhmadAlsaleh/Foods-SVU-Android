@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">زمان</string>
+    <string name="app_name">لقمة زمان</string>
     <string name="find_meal">اعثر على وصفة</string>
     <string name="try_again">حاول مرة ثانية</string>
     <string name="all_regions">كل المناطق</string>
@@ -12,4 +12,6 @@
     <string name="category">الفئة</string>
     <string name="settings">اﻹعدادات</string>
     <string name="meal_info">معلومات الوصفة</string>
+    <string name="title_activity_item_preview">معاينة</string>
+    <string name="action_settings">اﻹعدادات</string>
 </resources>

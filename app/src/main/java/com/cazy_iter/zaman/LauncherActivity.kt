@@ -62,6 +62,7 @@ class LauncherActivity : AppCompatActivity() {
                                 item.getString("name" + Statics.getCurrentLanguageName(this)),
                                 item.getString("image"),
                                 item.getString("locationID"),
+                                item.getString("content"),
                                 item.getString("description" + Statics.getCurrentLanguageName(this))
                         )
                 )
